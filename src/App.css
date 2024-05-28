@@ -1,20 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 .App {
   display: flex;
   background-color: #e3d7f4;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'montserrat', sans-serif;
+  font-weight: 400;
   letter-spacing: 1px;
+  min-height: 100vh;
 }
 p{margin: 0;}
 .nav--menu{
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin-top: 15px;
-  margin-left: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  margin: 15px;
+  border-radius: 10px;
   width: 35%;
   padding: 10px;
+  max-width: 300px;
 }
 .user--profile{
   display: flex;
@@ -42,7 +44,61 @@ p{margin: 0;}
  
 }
 .list--element{
-  border-bottom: 2px solid #c8b7c4;
-  padding: 1px;
+  /* border-bottom: 2px solid #c8b7c4; */
+  padding: 2px;
+  font-size: .95rem;
+  text-align: center;
+}
+
+.main{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 15px;
+  flex-grow: 1;
+
+}
+.logo{
+  color: white;
+  font-weight: 500;
+}
+.main--title{
+  color: white;
+  justify-self: center;
+  display: block;
+  align-self: center;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.task--container{
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  background-color: white;
+  padding: 7px;
+  max-width: 700px;
+  align-self: center;
+  justify-self: center;
+}
+.tasks--list{
+  list-style: none;
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+ 
+}
+
+
+
+.task--title{
+  font-size: .9rem;
+  margin-left: 5px;
+  color: #c8b7c4;
+}
+input{
+  color: blue;
+  text-decoration-color: aqua;
 }
 

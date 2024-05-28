@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import pfp from "./assets/user_img.png"
 import React from"react";
@@ -13,9 +12,11 @@ function App() {
       desc:"task description",
       isDone: false,
       date: "task date",
-      type: ""//type
+      type: "" //type
     })
   }
+
+  // cons tasksElements= taskList.map()
 
 
   return (
@@ -36,7 +37,22 @@ function App() {
       </ul>
       </div>
       <div className="main">
-      
+      <p className="logo">Todo List</p>
+      <h2 className="main--title">Today's Tasks</h2>
+      <ul className="tasks--list">  
+      <li className="task--container"> {/*will be updated to {tasksElements} */}
+      <input type="checkbox" className="checkbox"></input>  
+      <p className="task--title">Task 1</p>
+      </li>
+      <li className="task--container"> {/*will be updated to {tasksElements} */}
+      <input type="checkbox" className="checkbox"></input>  
+      <p className="task--title">Task 2</p>
+      </li>
+      <li className="task--container"> {/*will be updated to {tasksElements} */}
+      <input type="checkbox" className="checkbox"></input>  
+      <p className="task--title">Task 3</p>
+      </li>
+      </ul>
       </div>
     </div>
   );
