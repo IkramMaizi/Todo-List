@@ -1,23 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
+import pfp from "./assets/user_img.png"
+import React from"react";
 
 function App() {
+  const [taskList, setTaskList]= React.useState([]);
+
+  function newTask(){
+    //type=... check the date and define the task type
+    return({
+      title:"task title",
+      desc:"task description",
+      isDone: false,
+      date: "task date",
+      type: ""//type
+    })
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="nav--menu">
+      <div className="user--profile">
+      <img src={pfp} alt=""/>
+      <div className="user--info">
+      <p className="username">Username</p>
+      <p className="userId">User123</p>
+      </div>
+      </div>
+      <ul className="nav--list">
+      <li className="list--element">Today's tasks</li>
+      <li className="list--element">Upcoming tasks</li>
+      <li className="list--element">Previous tasks</li>
+      <li className="list--element">settings</li>
+      </ul>
+      </div>
+      <div className="main">
+      
+      </div>
     </div>
   );
 }
