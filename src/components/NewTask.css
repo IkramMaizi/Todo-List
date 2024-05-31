@@ -1,0 +1,71 @@
+
+h2{
+    margin: 0;
+}
+.popup--holder{
+    top:0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000003a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    position: relative;
+    border-radius: 7px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+
+}
+.title{
+    color: #c8b7c4;
+
+}
+.title--input{
+    border-radius: 7px;
+    border: .5px solid #c8b7c4;
+    padding: 7px;
+    color: #696969;
+    font: inherit;
+    font-size: .9rem;
+
+}
+.title--input:focus{
+    outline: none;
+}
+
+button{
+    padding: 7px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font: inherit;
+    font-size: .8rem;
+}
+
+.button--type{
+    background-color: white;
+    border: .7px solid #c8b7c4;
+    color: #c8b7c4;
+}
+
+.submit--button{
+    background-color: #c8b7c4;
+    color: white;
+    font-size: .9rem;
+    margin-block: 10px;
+}
+
+.type--options{
+    display: flex;
+    column-gap: 5px;
+
+}
