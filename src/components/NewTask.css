@@ -56,6 +56,11 @@ button{
     border: .7px solid #c8b7c4;
     color: #c8b7c4;
 }
+.button--type--clicked{
+    background-color: #c8b7c4;
+    border: .7px solid #c8b7c4;
+    color: white;
+}
 
 .submit--button{
     background-color: #c8b7c4;

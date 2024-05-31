@@ -38,6 +38,13 @@ function App() {
     }
   }
 
+  function setType(type){
+    setTaskList((prev) => ({ 
+      ...prev,
+      type: type
+     }))
+  }
+
   function showNewTaskWindow(){
     setNewTaskTrigger(true);
   }
@@ -59,7 +66,7 @@ function App() {
 
   return (
     <div className="App">
-      <NewTask trigger={newTaskTrigger} submit={submitNewTask} />
+      <NewTask trigger={newTaskTrigger} submit={submitNewTask} setType={setType} />
       <div className="nav--menu">
       <div className="user--profile">
       <img src={pfp} alt=""/>
