@@ -4,7 +4,7 @@ import React from"react";
 import NewTask from './components/NewTask';
 
 function App() {
-  const [taskList, setTaskList]= React.useState([newTask("first task", 1), newTask("Task2", 2), newTask("Task3", 3)]);
+  const [taskList, setTaskList]= React.useState([newTask("Task 1", 1), newTask("Task 2", 2), newTask("Task 3", 3)]);
   const [currentWindow, setCurrentWindow]= React.useState(1);
   const [newTaskTrigger, setNewTaskTrigger]= React.useState(false);
 
@@ -38,35 +38,35 @@ function App() {
     }
   }
 
-  function setType(type){
-    setTaskList((prev) => ({ 
-      ...prev,
-      type: type
-     }))
-  }
 
   function showNewTaskWindow(){
     setNewTaskTrigger(true);
   }
-  function submitNewTask(){
+  function submitNewTask(title, type){
+    console.log(taskList);
+    setTaskList( (prev) => ([...prev, newTask(title, type)]));
     setNewTaskTrigger(false);
   }
 
   const tasksElements= taskList.map((task)=>{
+    console.log("map function entered");
     if(task.type===currentWindow)
     return(
     <li className="task--container"> 
       <input type="checkbox" className="checkbox"></input>  
       <p className="task--title">{task.title}</p>
     </li>
-  )})
+  )
+else{
+  return ""
+}})
 
   const windowTitle= getWindowTitle();
 
 
   return (
     <div className="App">
-      <NewTask trigger={newTaskTrigger} submit={submitNewTask} setType={setType} />
+      <NewTask trigger={newTaskTrigger} submit={submitNewTask} />
       <div className="nav--menu">
       <div className="user--profile">
       <img src={pfp} alt=""/>
