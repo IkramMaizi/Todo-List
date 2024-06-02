@@ -8,13 +8,13 @@ function App() {
   const [currentWindow, setCurrentWindow]= React.useState(1);
   const [newTaskTrigger, setNewTaskTrigger]= React.useState(false);
 
-  function newTask(title, type){
+  function newTask(title, type, date){
     //type=... check the date and define the task type
     return({
       title: title,
       desc:"task description",
       isDone: false,
-      date: "task date",
+      date: date,
       type: type
     })
   }
@@ -42,9 +42,9 @@ function App() {
   function showNewTaskWindow(){
     setNewTaskTrigger(true);
   }
-  function submitNewTask(title, type){
-    console.log(taskList);
-    setTaskList( (prev) => ([...prev, newTask(title, type)]));
+  function submitNewTask(title, type, date){
+    console.log(date);
+    setTaskList( (prev) => ([...prev, newTask(title, type, date)]));
     setNewTaskTrigger(false);
   }
 
