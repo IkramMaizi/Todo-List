@@ -4,7 +4,7 @@ import React from"react";
 import NewTask from './components/NewTask';
 
 function App() {
-  const [taskList, setTaskList]= React.useState([newTask("Task 1", 1), newTask("Task 2", 2), newTask("Task 3", 3)]);
+  const [taskList, setTaskList]= React.useState([newTask("Task 1", 1), newTask("Task 2", 2), newTask("Task 3", 3), newTask("Task 4", 1)]);
   const [currentWindow, setCurrentWindow]= React.useState(1);
   const [newTaskTrigger, setNewTaskTrigger]= React.useState(false);
 
@@ -48,13 +48,24 @@ function App() {
     setNewTaskTrigger(false);
   }
 
+  function handleCheckboxChange(task){
+    setTaskList((prev) => { 
+      return prev.map((t) =>
+          t.title === task.title ? { ...t, type:3, isDone: !t.isDone } : t
+      );
+  });
+  }
+
   const tasksElements= taskList.map((task)=>{
     console.log("map function entered");
     if(task.type===currentWindow)
     return(
-    <li className="task--container"> 
-      <input type="checkbox" className="checkbox"></input>  
-      <p className="task--title">{task.title}</p>
+    <li className="task--container" key={task.title}> 
+    <label class="checkbox--container" htmlFor={`taskCheckbox-${task.title}`}>
+      <input type="checkbox" className="checkbox" id={`taskCheckbox-${task.title}`} onChange={() => handleCheckboxChange(task)} checked={task.isDone || false} ></input> 
+      <div className="checkmark"></div> 
+      </label>
+      <p className={task.isDone ? 'task--title--checked' : 'task--title'}>{task.title}</p>
     </li>
   )
 else{

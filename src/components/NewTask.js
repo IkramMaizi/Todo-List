@@ -8,6 +8,11 @@ function NewTask(props) {
     const [title, setTitle]= React.useState("");
     const [type, setType]= React.useState(1);
     const [date, setDate] = React.useState(new Date());
+    React.useEffect(() => { 
+      setTitle("");
+      setType(1);
+      setDate(new Date())
+     }, [props.trigger])
     function handleChange(event){
       setTitle(event.target.value)
     }
