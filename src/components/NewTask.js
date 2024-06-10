@@ -16,7 +16,10 @@ function NewTask(props) {
     function handleChange(event){
       setTitle(event.target.value)
     }
-    function changeDate(date){setDate(date)}
+    function changeDate(date){
+      date.setHours(0,0,0,0);
+      setDate(date); 
+    }
     const ExampleCustomInput = React.forwardRef(({ value, onClick }, ref) => (
       <div className="custom-input" onClick={onClick} ref={ref}>
         {value}

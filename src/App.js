@@ -2,14 +2,20 @@ import './App.css';
 import pfp from "./assets/user_img.png"
 import React from"react";
 import NewTask from './components/NewTask';
+import TaskElement from './components/TaskElement'
 
 function App() {
-  const [taskList, setTaskList]= React.useState([newTask("Task 1", 1), newTask("Task 2", 2), newTask("Task 3", 3), newTask("Task 4", 1)]);
+  const currentDate= new Date();
+  const [taskList, setTaskList]= React.useState([]);
   const [currentWindow, setCurrentWindow]= React.useState(1);
   const [newTaskTrigger, setNewTaskTrigger]= React.useState(false);
 
   function newTask(title, type, date){
-    //type=... check the date and define the task type
+    const currentDate= new Date();
+   
+    console.log(date);
+    console.log(`new task function entered. task: ${title}`);
+    // type= (date.getTime() == currentDate.getTime()) ? 1 : 2;
     return({
       title: title,
       desc:"task description",
@@ -43,30 +49,22 @@ function App() {
     setNewTaskTrigger(true);
   }
   function submitNewTask(title, type, date){
-    console.log(date);
     setTaskList( (prev) => ([...prev, newTask(title, type, date)]));
     setNewTaskTrigger(false);
   }
 
   function handleCheckboxChange(task){
     setTaskList((prev) => { 
-      return prev.map((t) =>
-          t.title === task.title ? { ...t, type:3, isDone: !t.isDone } : t
+      return prev.map((p) =>
+          p.title === task.title ? { ...p, type:(task.type===1 || task.type ===2)? 3 : 1, isDone: !p.isDone } : p
       );
   });
   }
 
   const tasksElements= taskList.map((task)=>{
-    console.log("map function entered");
     if(task.type===currentWindow)
     return(
-    <li className="task--container" key={task.title}> 
-    <label class="checkbox--container" htmlFor={`taskCheckbox-${task.title}`}>
-      <input type="checkbox" className="checkbox" id={`taskCheckbox-${task.title}`} onChange={() => handleCheckboxChange(task)} checked={task.isDone || false} ></input> 
-      <div className="checkmark"></div> 
-      </label>
-      <p className={task.isDone ? 'task--title--checked' : 'task--title'}>{task.title}</p>
-    </li>
+    <TaskElement task={task} handleCheckboxChange={handleCheckboxChange}/>
   )
 else{
   return ""
