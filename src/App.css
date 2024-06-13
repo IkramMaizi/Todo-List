@@ -12,7 +12,11 @@ html{
   min-height: 100vh;
   width: 100%;
 }
-p{margin: 0;}
+
+p{
+  margin: 0;
+}
+
 .nav--menu{
   display: flex;
   flex-direction: column;
@@ -22,6 +26,7 @@ p{margin: 0;}
   width: 35%;
   max-width: 300px;
 }
+
 .user--profile{
   display: flex;
   align-items: center;
@@ -29,16 +34,19 @@ p{margin: 0;}
   margin-bottom: 2rem;
   padding: 10px;
 }
+
 .user--profile img{
   grid-row: span 2;
   width: 3rem;
 }
+
 .user--info{
   display: flex;
   flex-direction: column;
   font-size: .8rem;
   row-gap: 2px;
 }
+
 .nav--list{
   list-style-type: none;
   padding-left: 0;
@@ -46,10 +54,8 @@ p{margin: 0;}
   flex-direction: column;
   color: #c8b7c4;
   row-gap: 5vh;
- 
 }
 .list--element{
-  /* border-bottom: 2px solid #c8b7c4; */
   padding: .6rem;
   font-size: .95rem;
   text-align: center;
@@ -60,6 +66,7 @@ p{margin: 0;}
   color: inherit;
   letter-spacing: inherit;
 }
+
 .list--element:hover{
   background-color: #f1e8fd;
 }
@@ -72,10 +79,12 @@ p{margin: 0;}
   flex-grow: 1;
 
 }
+
 .logo{
   color: white;
   font-weight: 500;
 }
+
 .main--title{
   margin-top: 20px;
   color: white;
@@ -85,44 +94,6 @@ p{margin: 0;}
   font-weight: 600;
   letter-spacing: 1.5px;
 }
-.task--container{
-  width: 100%;
-  display: flex;
-  border-radius: 10px;
-  background-color: white;
-  padding: 7px;
-  max-width: 700px;
-  align-self: center;
-  justify-self: center;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.checkbox--container{
-  width: 12px;
-  height: 12px;
-  border: 1px solid #c8b7c4;
-  border-radius: 2px;
-  cursor: pointer;
-}
-.checkbox{
-  display: none;
-}
-
-.checkmark {
-  display: none;
-}
-
-.checkbox--container input:checked ~ .checkmark{
-  display: block;
-  left: 4px;
-  width: 3px;
-  height: 8px;
-  position: relative;
-  border: solid #c8b7c4;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
 
 .tasks--list{
   list-style: none;
@@ -131,21 +102,8 @@ p{margin: 0;}
   display: flex;
   flex-direction: column;
   row-gap: 15px;
- 
-}
-.task--title{
-  font-size: .9rem;
-  margin-left: 8px;
-  color: #c8b7c4;
 }
 
-
-.task--title--checked{
-  text-decoration: line-through;
-  font-size: .9rem;
-  margin-left: 8px;
-  color: #c8b7c4;
-}
 input{
   color: blue;
   text-decoration-color: aqua;
@@ -164,9 +122,11 @@ input{
   right: 5%;
   background-color: white;
 }
+
 .cross{
   align-self: center;
 }
+
 .horizontal{
   position: absolute;
   width: 20px;
@@ -174,6 +134,7 @@ input{
   background-color: #e3d7f4;
   border-radius: 3px;
 }
+
 .vertical{
   width: 20px;
   height: 3px;

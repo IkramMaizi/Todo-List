@@ -6,15 +6,12 @@ import TaskElement from './components/TaskElement'
 
 function App() {
   const currentDate= new Date();
-  const [taskList, setTaskList]= React.useState([]);
+  const [taskList, setTaskList]= React.useState([newTask("task example (today)", 1, currentDate), newTask("task example (upcoming)", 2)]);
   const [currentWindow, setCurrentWindow]= React.useState(1);
   const [newTaskTrigger, setNewTaskTrigger]= React.useState(false);
 
   function newTask(title, type, date){
-    const currentDate= new Date();
-   
-    console.log(date);
-    console.log(`new task function entered. task: ${title}`);
+    console.log(`new task added. task: ${title} date: ${date}`);
     // type= (date.getTime() == currentDate.getTime()) ? 1 : 2;
     return({
       title: title,
@@ -48,6 +45,7 @@ function App() {
   function showNewTaskWindow(){
     setNewTaskTrigger(true);
   }
+
   function submitNewTask(title, type, date){
     setTaskList( (prev) => ([...prev, newTask(title, type, date)]));
     setNewTaskTrigger(false);
@@ -64,7 +62,7 @@ function App() {
   const tasksElements= taskList.map((task)=>{
     if(task.type===currentWindow)
     return(
-    <TaskElement task={task} handleCheckboxChange={handleCheckboxChange}/>
+    <TaskElement task={task} handleCheckboxChange={handleCheckboxChange} key={task.title}/>
   )
 else{
   return ""
