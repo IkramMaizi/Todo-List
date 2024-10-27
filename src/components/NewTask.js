@@ -26,7 +26,7 @@ function NewTask(props) {
       </div>
     ));
   return (props.trigger) ? (
-    <div className="popup--holder">
+    <div className="popup--holder" onClick={props.close}>
     <div className='popup'>
         <h2 className='title'>New Task</h2>
         <input type="text" className='title--input' onChange={handleChange}/>

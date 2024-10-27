@@ -46,6 +46,10 @@ function App() {
     setNewTaskTrigger(true);
   }
 
+  function closeWindow(){
+    setNewTaskTrigger(false);
+  }
+
   function submitNewTask(title, type, date){
     setTaskList( (prev) => ([...prev, newTask(title, type, date)]));
     setNewTaskTrigger(false);
@@ -73,7 +77,7 @@ else{
 
   return (
     <div className="App">
-      <NewTask trigger={newTaskTrigger} submit={submitNewTask} />
+      <NewTask trigger={newTaskTrigger} submit={submitNewTask} close={closeWindow}/>
       <div className="nav--menu">
       <div className="user--profile">
       <img src={pfp} alt=""/>
